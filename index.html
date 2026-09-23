@@ -1,246 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yeleswarapu Kasi Viswanath Sastry — Cloud Solutions Architecture</title>
-<meta name="description" content="Portfolio of Yeleswarapu Kasi Viswanath Sastry, Cloud Solutions Architecture student at VIT-AP University.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viswanath — Full-Stack Developer & AI/ML Enthusiast</title>
+  <meta name="description"
+    content="Portfolio of Yeleswarapu Kasi Viswanath Sastry — B.Tech CSE student at VIT-AP University, building intelligent full-stack applications with AI/ML.">
+  <meta name="theme-color" content="#06060b">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Viswanath — Full-Stack Developer & AI/ML Enthusiast">
+  <meta property="og:description" content="B.Tech CSE student building intelligent, full-stack applications.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (SVG inline) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%2306060b%22 width=%22100%22 height=%22100%22 rx=%2220%22/><text x=%2250%22 y=%2268%22 font-family=%22sans-serif%22 font-size=%2240%22 font-weight=%22700%22 fill=%22%237C3AED%22 text-anchor=%22middle%22>VK</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="grid-overlay" aria-hidden="true"></div>
+<body class="is-loading">
 
-<header class="site-header">
-  <div class="wrap header-row">
-    <span class="logo">YKVS<span class="logo-dot">.</span></span>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#stack">Stack</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- ==================== PRELOADER ==================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__content">
+      <div class="preloader__counter">
+        <span class="preloader__number" id="preloader-number">0</span>
+        <span class="preloader__percent">%</span>
+      </div>
+      <div class="preloader__bar">
+        <div class="preloader__bar-fill" id="preloader-bar"></div>
+      </div>
+      <span class="preloader__tagline">Loading Experience</span>
+    </div>
   </div>
-</header>
 
-<main>
-  <!-- HERO -->
-  <section class="hero wrap" id="top">
-    <div class="hero-text">
-      <p class="eyebrow">// student · distributed systems &amp; cloud architecture · vit-ap</p>
-      <h1>Yeleswarapu Kasi<br>Viswanath Sastry</h1>
-      <p class="hero-sub">I design and diagram resilient cloud systems &mdash; from strict access-control
-      boundaries to highly available data tiers &mdash; before writing a single line of infrastructure
-      code. My focus is on production-grade topology and architectural patterns.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View architectures</a>
-        <a class="btn btn-ghost" href="mailto:viswanathyeleswarapu77@gmail.com">Get in touch</a>
+  <!-- ==================== CUSTOM CURSOR ==================== -->
+  <div class="cursor" id="cursor">
+    <div class="cursor__circle"></div>
+    <span class="cursor__label"></span>
+  </div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" data-magnetic>
+        <span>VK.</span>
+      </a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#about" class="nav__link" data-magnetic>About</a>
+        <a href="#featured" class="nav__link" data-magnetic>Projects</a>
+        <a href="#stack" class="nav__link" data-magnetic>Stack</a>
+        <a href="#education" class="nav__link" data-magnetic>Journey</a>
+        <a href="#contact" class="nav__link nav__link--cta" data-magnetic>Let's Connect</a>
+      </nav>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" data-magnetic>
+        <div class="nav__hamburger-lines">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MOBILE MENU OVERLAY ==================== -->
+  <div class="menu-overlay" id="menu-overlay">
+    <nav class="menu-overlay__nav" aria-label="Mobile navigation">
+      <a href="#about" class="menu-overlay__link">
+        <span>About</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a href="#featured" class="menu-overlay__link">
+        <span>Featured Projects</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a href="#all-projects" class="menu-overlay__link">
+        <span>All Projects</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a href="#stack" class="menu-overlay__link">
+        <span>Tech Stack</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a href="#education" class="menu-overlay__link">
+        <span>Journey</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a href="#contact" class="menu-overlay__link">
+        <span>Contact</span>
+        <svg class="menu-overlay__link-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+    </nav>
+    <div class="menu-overlay__footer">
+      <div class="menu-overlay__footer-socials">
+        <a href="https://github.com/viswanath006" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/viswanath-yeleswarapu-272168335" target="_blank"
+          rel="noopener">LinkedIn</a>
       </div>
+      <span class="menu-overlay__footer-email">viswanathyeleswarapu77@gmail.com</span>
     </div>
+  </div>
 
-    <div class="diagram-panel" aria-hidden="true">
-      <div class="panel-label">architecture.diagram &mdash; live render</div>
-      <svg class="diagram" viewBox="0 0 460 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g class="wires">
-          <path class="wire" d="M230 60 L110 140" />
-          <path class="wire" d="M230 60 L350 140" />
-          <path class="wire" d="M110 140 L110 240" />
-          <path class="wire" d="M350 140 L350 240" />
-          <path class="wire" d="M110 240 L230 300" />
-          <path class="wire" d="M350 240 L230 300" />
-          <path class="wire" d="M110 140 L350 140" />
-        </g>
-        <g class="nodes">
-          <g class="node" style="--d:0s"><rect x="190" y="30" width="80" height="46" rx="4"/><text x="230" y="58">IAM</text></g>
-          <g class="node" style="--d:0.15s"><rect x="70" y="114" width="80" height="46" rx="4"/><text x="110" y="142">EC2</text></g>
-          <g class="node" style="--d:0.3s"><rect x="310" y="114" width="80" height="46" rx="4"/><text x="350" y="142">S3</text></g>
-          <g class="node" style="--d:0.45s"><rect x="70" y="214" width="80" height="46" rx="4"/><text x="110" y="242">RDS</text></g>
-          <g class="node" style="--d:0.6s"><rect x="310" y="214" width="80" height="46" rx="4"/><text x="350" y="242">Lambda</text></g>
-          <g class="node node-signal" style="--d:0.75s"><rect x="190" y="274" width="80" height="46" rx="4"/><text x="230" y="302">Client</text></g>
-        </g>
-      </svg>
-      <div class="panel-caption">every project below ships with a diagram like this one</div>
-    </div>
-  </section>
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
 
-  <!-- ABOUT -->
-  <section class="about wrap" id="about">
-    <div class="section-head">
-      <span class="section-tag">01</span>
-      <h2>About</h2>
-    </div>
-    <p class="about-text">
-      I'm a Computer Science student at <strong>VIT-AP University</strong>. My focus is on
-      designing systems that hold up under real constraints: enforcing least-privilege security
-      models, deploying elastic storage, and configuring robust data tiers that withstand heavy load.
-      I like starting from the diagram &mdash; defining service boundaries and communication flows &mdash;
-      before provisioning infrastructure.
-    </p>
-    <div class="about-grid">
-      <div class="about-card">
-        <span class="about-card-label">Institution</span>
-        <span class="about-card-value">VIT-AP University</span>
-      </div>
-      <div class="about-card">
-        <span class="about-card-label">Degree</span>
-        <span class="about-card-value">B.Tech, Computer Science</span>
-      </div>
-      <div class="about-card">
-        <span class="about-card-label">Focus</span>
-        <span class="about-card-value">Cloud &amp; Systems Architecture</span>
-      </div>
-    </div>
-  </section>
+    <!-- ======= HERO ======= -->
+    <section class="hero wrap" id="hero">
+      <!-- Animated gradient orbs -->
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
 
-  <!-- EDUCATION & CERTIFICATIONS -->
-  <section class="education wrap" id="education">
-    <div class="section-head">
-      <span class="section-tag">02</span>
-      <h2>Education &amp; Certifications</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-body">
-          <span class="timeline-kind">education</span>
-          <h3>B.Tech, Computer Science &amp; Engineering</h3>
-          <p>VIT-AP University &mdash; focusing on scalable infrastructure, distributed systems,
-          and applied cloud engineering.</p>
+      <div class="hero__content">
+        <div class="hero__label" data-animation="fade-up">
+          <span>B.Tech CSE &middot; Full-Stack Developer &middot; AI/ML Enthusiast</span>
+        </div>
+        <h1 class="hero__title">
+          <div class="hero__title-line" data-animation="reveal">
+            <span>Viswanath</span>
+          </div>
+          <div class="hero__title-line" data-animation="reveal">
+            <span>Kasi <em>Sastry</em></span>
+          </div>
+        </h1>
+        <p class="hero__subtitle" data-animation="fade-up">
+          A passionate developer building modern, scalable, and intelligent applications —
+          from AI-powered platforms to full-stack systems that solve real-world problems.
+        </p>
+        <div class="hero__actions" data-animation="fade-up">
+          <a href="#featured" class="btn btn--primary" data-magnetic>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2v9M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>View Projects</span>
+          </a>
+          <a href="#contact" class="btn btn--outline" data-magnetic>
+            <span>Get in Touch</span>
+          </a>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-marker cert"></div>
-        <div class="timeline-body">
-          <span class="timeline-kind">certification</span>
-          <h3>IBM &mdash; Advanced Generative AI</h3>
-          <p>Certification covering advanced generative AI concepts and applied practice, issued by IBM.</p>
+      <div class="hero__footer">
+        <div class="hero__meta" data-animation="fade-up">
+          <span class="hero__meta-label">Location</span>
+          <span>Amaravati, Andhra Pradesh</span>
+        </div>
+        <div class="hero__scroll" data-animation="fade-up">
+          <div class="hero__scroll-line"></div>
+          <span>Scroll to explore</span>
+        </div>
+        <div class="hero__meta hero__meta--right" data-animation="fade-up">
+          <span class="hero__meta-label">Status</span>
+          <span><i class="status-dot"></i>Open for internships &amp; collabs</span>
         </div>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-marker cert"></div>
-        <div class="timeline-body">
-          <span class="timeline-kind">certification</span>
-          <h3>Hedera Hashgraph &mdash; HCDA &amp; HCF</h3>
-          <p>Hedera Certified Developer Associate (HCDA) and Hedera Certified Fundamentals (HCF),
-          covering distributed ledger development on the Hedera network.</p>
+    <!-- ======= MARQUEE ======= -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span>TypeScript</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>React</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Next.js</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Python</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>FastAPI</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>AI / ML</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>TensorFlow</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Gemini AI</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Supabase</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>PostgreSQL</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Flutter</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Node.js</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>AWS</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Docker</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Computer Vision</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Tailwind CSS</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>JavaScript</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Java</span>
+          <span class="marquee__dot">&#9670;</span>
+        </div>
+        <div class="marquee__content">
+          <span>TypeScript</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>React</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Next.js</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Python</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>FastAPI</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>AI / ML</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>TensorFlow</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Gemini AI</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Supabase</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>PostgreSQL</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Flutter</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Node.js</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>AWS</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Docker</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Computer Vision</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Tailwind CSS</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>JavaScript</span>
+          <span class="marquee__dot">&#9670;</span>
+          <span>Java</span>
+          <span class="marquee__dot">&#9670;</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section class="projects wrap" id="projects">
-    <div class="section-head">
-      <span class="section-tag">03</span>
-      <h2>Architectures</h2>
-    </div>
-
-    <div class="project-list">
-
-      <article class="project-card">
-        <div class="project-top">
-          <h3>CloudCart</h3>
-          <span class="project-kind">auto-scaling · e-commerce</span>
-        </div>
-        <p>A scalable online shopping platform designed around AWS core infrastructure &mdash;
-        built to handle catalog growth and traffic spikes without a redesign.</p>
-        <ul class="tag-row">
-          <li>IAM</li><li>EC2</li><li>S3</li><li>RDS</li>
-        </ul>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <h3>MedFlow</h3>
-          <span class="project-kind">strong-consistency · healthcare</span>
-        </div>
-        <p>A real-time bed allocation and emergency triage orchestration system for
-        multi-specialty hospitals, designed to keep critical data consistent under pressure.</p>
-        <ul class="tag-row">
-          <li>IAM</li><li>EC2</li><li>S3</li><li>RDS</li>
-        </ul>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <h3>Queue Management System</h3>
-          <span class="project-kind">systems design</span>
-        </div>
-        <p>A system for coordinating and prioritizing service queues in high-footfall
-        environments, reducing wait-time variance through structured scheduling.</p>
-        <ul class="tag-row">
-          <li>Scheduling</li><li>Real-time</li>
-        </ul>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <h3>Student Performance Prediction</h3>
-          <span class="project-kind">machine learning</span>
-        </div>
-        <p>A neural network model trained to predict academic performance from historical
-        and behavioral data, aimed at flagging students who'd benefit from early support.</p>
-        <ul class="tag-row">
-          <li>Neural Networks</li><li>Python</li>
-        </ul>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section class="stack wrap" id="stack">
-    <div class="section-head">
-      <span class="section-tag">04</span>
-      <h2>Stack</h2>
-    </div>
-    <div class="stack-groups">
-      <div class="stack-group">
-        <span class="stack-label">Cloud Infrastructure</span>
-        <ul class="tag-row">
-          <li>IAM</li><li>EC2</li><li>S3</li><li>RDS</li><li>Lambda</li>
-        </ul>
+    <!-- ======= ABOUT ======= -->
+    <section class="about wrap" id="about">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">01</span>
+        <h2>About</h2>
       </div>
-      <div class="stack-group">
-        <span class="stack-label">Languages</span>
-        <ul class="tag-row">
-          <li>Python</li><li>Java</li><li>SQL</li>
-        </ul>
+      <p class="about-text" data-reveal>
+        I'm a Computer Science student at <strong>VIT-AP University</strong> with a deep interest in
+        building intelligent, production-ready applications. From designing AI-powered procurement systems
+        for government hackathons to shipping real-time aggregation platforms — I enjoy the full spectrum:
+        training models, designing databases, and crafting polished interfaces. I start with understanding the
+        problem, then architect a system that scales.
+      </p>
+      <div class="about-grid" data-reveal>
+        <div class="about-card">
+          <span class="about-card-label">Institution</span>
+          <span class="about-card-value">VIT-AP University</span>
+        </div>
+        <div class="about-card">
+          <span class="about-card-label">Degree</span>
+          <span class="about-card-value">B.Tech, Computer Science</span>
+        </div>
+        <div class="about-card">
+          <span class="about-card-label">Focus</span>
+          <span class="about-card-value">AI/ML &amp; Full-Stack Development</span>
+        </div>
       </div>
-      <div class="stack-group">
-        <span class="stack-label">ML / Data</span>
-        <ul class="tag-row">
-          <li>Neural Networks</li><li>Data Modeling</li>
-        </ul>
+    </section>
+
+    <!-- ======= FEATURED PROJECTS ======= -->
+    <section class="featured wrap" id="featured">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">02</span>
+        <h2>Featured Projects</h2>
       </div>
+
+      <div class="featured-grid">
+
+        <!-- ProcureAI -->
+        <article class="featured-card featured-card--hero featured-card--1" data-reveal data-cursor-label="View">
+          <div class="featured-card__glow"></div>
+          <div class="featured-card__top">
+            <span class="featured-card__badge">SIH 2026</span>
+            <div class="featured-card__links">
+              <a href="https://github.com/viswanath006/ProcureAI" target="_blank" rel="noopener"
+                class="featured-card__link" aria-label="GitHub" data-magnetic>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="featured-card__body">
+            <h3 class="featured-card__title">ProcureAI</h3>
+            <p class="featured-card__desc">
+              An enterprise-grade, explainable, and tamper-evident e-Procurement governance platform.
+              AI recommends using QCBS scoring &amp; SHAP explainability, humans decide with statutory authority,
+              and the system audits with SHA-256 hash-chained immutable ledgers.
+            </p>
+            <div class="featured-card__tags">
+              <span class="featured-card__tag">React</span>
+              <span class="featured-card__tag">TypeScript</span>
+              <span class="featured-card__tag">FastAPI</span>
+              <span class="featured-card__tag">PostgreSQL</span>
+              <span class="featured-card__tag">SHAP XAI</span>
+              <span class="featured-card__tag">AES-256</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- HackFeed -->
+        <article class="featured-card featured-card--2" data-reveal data-cursor-label="View">
+          <div class="featured-card__glow"></div>
+          <div class="featured-card__top">
+            <span class="featured-card__badge">Live App</span>
+            <div class="featured-card__links">
+              <a href="https://hack-feed-umber.vercel.app" target="_blank" rel="noopener"
+                class="featured-card__link" aria-label="Live Demo" data-magnetic>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://github.com/viswanath006/HackFeed" target="_blank" rel="noopener"
+                class="featured-card__link" aria-label="GitHub" data-magnetic>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="featured-card__body">
+            <h3 class="featured-card__title">HackFeed</h3>
+            <p class="featured-card__desc">
+              Real-time aggregation platform pulling active hackathons, internships &amp; coding challenges
+              from Unstop, Devfolio, HackerEarth — into one searchable, filterable feed.
+            </p>
+            <div class="featured-card__tags">
+              <span class="featured-card__tag">Next.js 14</span>
+              <span class="featured-card__tag">Supabase</span>
+              <span class="featured-card__tag">Python</span>
+              <span class="featured-card__tag">OAuth 2.0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PlantMind AI -->
+        <article class="featured-card featured-card--3" data-reveal data-cursor-label="View">
+          <div class="featured-card__glow"></div>
+          <div class="featured-card__top">
+            <span class="featured-card__badge">ET Hackathon</span>
+            <div class="featured-card__links">
+              <a href="https://github.com/viswanath006/plantmind_ai" target="_blank" rel="noopener"
+                class="featured-card__link" aria-label="GitHub" data-magnetic>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="featured-card__body">
+            <h3 class="featured-card__title">PlantMind AI</h3>
+            <p class="featured-card__desc">
+              An agentic knowledge engine for industrial plants — ingests SOPs, P&amp;IDs &amp; maintenance logs,
+              builds a knowledge graph, and runs autonomous root cause analysis via Gemini AI.
+            </p>
+            <div class="featured-card__tags">
+              <span class="featured-card__tag">Next.js</span>
+              <span class="featured-card__tag">Gemini AI</span>
+              <span class="featured-card__tag">Knowledge Graphs</span>
+              <span class="featured-card__tag">RAG</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- AgroSat AI -->
+        <article class="featured-card featured-card--4" data-reveal data-cursor-label="View">
+          <div class="featured-card__glow"></div>
+          <div class="featured-card__top">
+            <span class="featured-card__badge">BAH 2026</span>
+            <div class="featured-card__links">
+              <a href="https://github.com/viswanath006/Agrosat-AI" target="_blank" rel="noopener"
+                class="featured-card__link" aria-label="GitHub" data-magnetic>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="featured-card__body">
+            <h3 class="featured-card__title">AgroSat AI</h3>
+            <p class="featured-card__desc">
+              Satellite-driven agri-intelligence platform — uses Sentinel-2/Sentinel-1 SAR data for crop classification,
+              moisture stress detection, and pixel-level irrigation advisories via FAO-56.
+            </p>
+            <div class="featured-card__tags">
+              <span class="featured-card__tag">Python</span>
+              <span class="featured-card__tag">TensorFlow</span>
+              <span class="featured-card__tag">Google Earth Engine</span>
+              <span class="featured-card__tag">Streamlit</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======= ALL PROJECTS ======= -->
+    <section class="all-projects wrap" id="all-projects">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">03</span>
+        <h2>More Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- FIFAPULSE -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://fifapulse.vercel.app" target="_blank" rel="noopener" class="project-card__link"
+                aria-label="Live Demo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://github.com/viswanath006/FIFAPULSE" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">FIFAPULSE</h3>
+          <span class="project-card__kind">smart stadiums · ai ops</span>
+          <p class="project-card__desc">AI Operating System for smart stadiums &amp; tournament operations management.</p>
+          <ul class="project-card__tags">
+            <li>TypeScript</li>
+            <li>AI/ML</li>
+            <li>Real-time</li>
+          </ul>
+        </article>
+
+        <!-- RoadSoS -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://github.com/viswanath006/RoadSos" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">RoadSoS</h3>
+          <span class="project-card__kind">IITM Hackathon · road safety</span>
+          <p class="project-card__desc">Golden Hour emergency response — one-tap SOS, nearest services, offline essentials.</p>
+          <ul class="project-card__tags">
+            <li>Flutter</li>
+            <li>FastAPI</li>
+            <li>PostGIS</li>
+            <li>Docker</li>
+          </ul>
+        </article>
+
+        <!-- Automata AI -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://github.com/viswanath006/automata-ai" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Automata AI</h3>
+          <span class="project-card__kind">frontend · SaaS landing</span>
+          <p class="project-card__desc">Premium AI automation SaaS landing page with bento grids, dynamic pricing &amp; testimonials.</p>
+          <ul class="project-card__tags">
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Vite</li>
+          </ul>
+        </article>
+
+        <!-- Authentix -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://github.com/viswanath006/Authentix_" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Authentix</h3>
+          <span class="project-card__kind">authentication · security</span>
+          <p class="project-card__desc">Secure authentication system with modern security patterns and session management.</p>
+          <ul class="project-card__tags">
+            <li>JavaScript</li>
+            <li>Node.js</li>
+            <li>Auth</li>
+          </ul>
+        </article>
+
+        <!-- CloudCart -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://github.com/viswanath006" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">CloudCart</h3>
+          <span class="project-card__kind">auto-scaling · e-commerce</span>
+          <p class="project-card__desc">Scalable online shopping platform on AWS — handles catalog growth and traffic spikes.</p>
+          <ul class="project-card__tags">
+            <li>IAM</li>
+            <li>EC2</li>
+            <li>S3</li>
+            <li>RDS</li>
+          </ul>
+        </article>
+
+        <!-- MedFlow -->
+        <article class="project-card" data-reveal>
+          <div class="project-card__header">
+            <svg class="project-card__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="project-card__links">
+              <a href="https://github.com/viswanath006" target="_blank" rel="noopener"
+                class="project-card__link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">MedFlow</h3>
+          <span class="project-card__kind">healthcare · real-time</span>
+          <p class="project-card__desc">Hospital bed allocation &amp; emergency triage orchestration — keeps critical data consistent under pressure.</p>
+          <ul class="project-card__tags">
+            <li>IAM</li>
+            <li>EC2</li>
+            <li>S3</li>
+            <li>RDS</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======= TECH STACK ======= -->
+    <section class="stack wrap" id="stack">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">04</span>
+        <h2>Tech Stack</h2>
+      </div>
+      <div class="stack-groups" data-reveal>
+        <div class="stack-group">
+          <span class="stack-label">Languages</span>
+          <ul class="stack-items">
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>Dart</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">Frameworks</span>
+          <ul class="stack-items">
+            <li>React</li>
+            <li>Next.js</li>
+            <li>FastAPI</li>
+            <li>Flutter</li>
+            <li>Node.js</li>
+            <li>Vite</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">AI / ML</span>
+          <ul class="stack-items">
+            <li>TensorFlow</li>
+            <li>PyTorch</li>
+            <li>Gemini AI</li>
+            <li>SHAP XAI</li>
+            <li>Computer Vision</li>
+            <li>NLP</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <span class="stack-label">Cloud & Tools</span>
+          <ul class="stack-items">
+            <li>AWS</li>
+            <li>Supabase</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= EDUCATION & CERTIFICATIONS ======= -->
+    <section class="education wrap" id="education">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">05</span>
+        <h2>Education &amp; Certifications</h2>
+      </div>
+
+      <div class="timeline" data-reveal>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-body">
+            <span class="timeline-kind">education</span>
+            <h3>B.Tech, Computer Science &amp; Engineering</h3>
+            <p>VIT-AP University — Focusing on AI/ML, full-stack development, distributed systems,
+              and applied software engineering.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker cert"></div>
+          <div class="timeline-body">
+            <span class="timeline-kind cert-kind">certification</span>
+            <h3>IBM — Advanced Generative AI</h3>
+            <p>Certification covering advanced generative AI concepts, prompt engineering, and applied
+              practice, issued by IBM.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker cert"></div>
+          <div class="timeline-body">
+            <span class="timeline-kind cert-kind">certification</span>
+            <h3>Hedera Hashgraph — HCDA &amp; HCF</h3>
+            <p>Hedera Certified Developer Associate (HCDA) and Hedera Certified Fundamentals (HCF),
+              covering distributed ledger development on the Hedera network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section class="contact wrap" id="contact">
+      <div class="contact-panel" data-reveal>
+        <p class="panel-label">contact.open()</p>
+        <h2>Let's build something together.</h2>
+        <p class="contact-sub">
+          Whether it's a hackathon team, an internship opportunity, or just a cool idea —
+          I'm always up for a conversation.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:viswanathyeleswarapu77@gmail.com">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/viswanath-yeleswarapu-272168335" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/viswanath006" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21.5c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                fill="currentColor" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Yeleswarapu Kasi Viswanath Sastry</span>
+    <div class="footer-links">
+      <a href="https://github.com/viswanath006" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/viswanath-yeleswarapu-272168335" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </section>
+  </footer>
 
-  <!-- CONTACT -->
-  <section class="contact wrap" id="contact">
-    <div class="contact-panel">
-      <p class="panel-label">contact.open()</p>
-      <h2>Let's talk architecture.</h2>
-      <div class="contact-links">
-        <a href="mailto:viswanathyeleswarapu77@gmail.com">viswanathyeleswarapu77@gmail.com</a>
-        <a href="https://www.linkedin.com/in/viswanath-yeleswarapu-272168335" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://github.com/viswanath006" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer wrap">
-  <span>&copy; 2026 Yeleswarapu Kasi Viswanath Sastry</span>
-  <span>Built &amp; deployed via GitHub Pages</span>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
